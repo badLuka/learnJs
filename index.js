@@ -81,10 +81,11 @@ const students = {
 };
     
 function getTopStudent(subject, studentsObj) {
-    const studentsArr = (Object.entries(students));   
-    studentsArr.forEach(([name, lessons]) => {       
-        console.log(Object.entries(lessons));
-    })    
+    Object.entries(students).forEach(([studentName, predmets]) => {
+        Object.entries(predmets).forEach(([el, rating]) => {
+            console.log(`Предмет ${el}: баллов ${rating}`);           
+        })       
+    })
     
 }
 
