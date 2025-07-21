@@ -81,17 +81,13 @@ const students = {
 };
     
 function getTopStudent(subject, studentsObj) {
-    Object.entries(students).forEach(([studentName, predmets]) => {
+    Object.entries(studentsObj).forEach(([studentName, predmets]) => {
         Object.entries(predmets).map(([elem, rating]) => {
-            // el.find((subject) => subject) 
-            if( subject === elem) {
-                const highRating = Math.max(rating)
-                console.log(`Наивысшая оценка ${highRating} по предмету ${subject} у ученика ${studentName}`);                
+            if (subject === elem) {               
+                console.log(`Наивысшая оценка ${rating} по предмету ${subject} у ученика ${studentName}`);                
             }
         })       
-    })
-    
+    })    
 }
-
 
 getTopStudent('physics', students);
